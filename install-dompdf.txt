@@ -1,0 +1,41 @@
+INSTALASI DOMPDF UNTUK LAPORAN PDF
+
+1. Jalankan command berikut di terminal:
+   composer require barryvdh/laravel-dompdf
+
+2. Publish config (opsional):
+   php artisan vendor:publish --provider="Barryvdh\DomPDF\ServiceProvider"
+
+3. Tambahkan di config/app.php (jika belum otomatis):
+   'providers' => [
+       ...
+       Barryvdh\DomPDF\ServiceProvider::class,
+   ],
+   
+   'aliases' => [
+       ...
+       'PDF' => Barryvdh\DomPDF\Facade\Pdf::class,
+   ],
+
+FITUR LAPORAN PDF YANG SUDAH DIBUAT:
+
+✅ Laporan Artikel per Bulan/Kategori
+✅ Laporan Aktivitas dengan Statistik
+✅ Template PDF yang Rapi
+✅ Download Otomatis
+✅ Filter Berdasarkan Periode
+✅ Statistik Lengkap
+
+CARA MENGGUNAKAN:
+1. Login sebagai Admin
+2. Klik "Laporan PDF" di dashboard
+3. Pilih jenis laporan (Artikel/Aktivitas)
+4. Set filter (bulan, kategori, tanggal)
+5. Klik "Download PDF"
+
+FILE YANG DIBUAT:
+- ReportController.php
+- admin/reports/index.blade.php
+- admin/reports/artikel-pdf.blade.php
+- admin/reports/aktivitas-pdf.blade.php
+- Routes sudah ditambahkan
